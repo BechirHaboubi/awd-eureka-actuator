@@ -106,14 +106,3 @@ Les liens des instances MEETING et NOTIFICATION ouvrent `/info`.
 ![Dashboard Eureka](documentation/eureka-dashboard.png)
 ### /actuator/metrics
 
-**Combien de requêtes HTTP Candidat a-t-il traitées (COUNT) ?**
-27 requêtes (`/actuator/metrics/http.server.requests`).
-
-**Durée de la requête la plus lente (MAX) ?**
-0,5724552 seconde (environ 572 ms).
-
-**Que donne `/actuator/metrics/http.server.requests?tag=status:200` ?**
-Seules les requêtes avec le code HTTP 200 (succès) sont comptées : COUNT = 25.
-Les 2 autres requêtes sont des 404 et 302 (`/**` et redirection Swagger).
-
-**Mémoire JVM utilisée (`jvm.memory.used`)** : environ 167 Mo (167 155 696 octets).
