@@ -2,10 +2,15 @@ const express = require('express');
 const swaggerUi = require('swagger-ui-express');
 const openapiSpec = require('./config/swagger');
 const meetingRoutes = require('./routes/meeting.routes');
+const pkg = require('../package.json');
 
 const app = express();
 
 app.use(express.json());
+
+// ---- Health & info (Actuator-like) ----
+app.get('/health', (req, res) => res.status(200).json({ status: 'UP' }));
+app.get('/info', (req, res) => res.json({ name: pkg.name, version: pkg.version }));
 
 // ---- Swagger documentation ----
 app.get('/v3/api-docs', (req, res) => res.json(openapiSpec));

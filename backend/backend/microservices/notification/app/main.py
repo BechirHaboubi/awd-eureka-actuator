@@ -22,6 +22,8 @@ async def lifespan(app: FastAPI):
         app_name="notification",
         instance_port=PORT,
         instance_ip="127.0.0.1",
+        health_check_url=f"http://127.0.0.1:{PORT}/health",
+        status_page_url=f"http://127.0.0.1:{PORT}/info",
     )
     yield
     # Arrêt : désinscription d'Eureka
@@ -45,6 +47,18 @@ app = FastAPI(
 )
 
 app.include_router(notification.router)
+
+
+# ---- Health & info (Actuator-like) ----
+@app.get("/health")
+def health():
+    return {"status": "UP"}
+
+
+@app.get("/info")
+def info():
+    return {"name": "notification", "version": app.version}
+
 
 # TODO (students): if you add other routers, include them here.
 
