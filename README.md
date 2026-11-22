@@ -5,7 +5,7 @@
 - Dhia Trabelsi
 - Yassine Gharbi
 - Bechir Haboubi
-  Nom de l'équipe : smartcampus
+- Nom de l'équipe : smartcampus
 
 ## Architecture
 
