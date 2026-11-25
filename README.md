@@ -349,7 +349,7 @@ Le dashboard Eureka montre les services suivants en état `UP` :
 - Meeting sur les ports `8083` et `8093` ;
 - Notification sur les ports `8084` et `8094`.
 
-documentation/gateway-eureka-dashboard.png
+![Dashboard Eureka](documentation/gateway-eureka-dashboard.png)
 
 ---
 
@@ -368,8 +368,8 @@ La réponse obtenue est :
 ```json
 []
 ```
+![Dashboard Eureka](documentation/gateway-dynamic-candidat.png)
 
-documentation/gateway-dynamic-candidat.png
 
 La réponse `[]` signifie que la requête fonctionne correctement, mais que la table ne contient pas encore de candidats.
 
@@ -394,8 +394,8 @@ La réponse obtenue dans les deux cas est :
 ```json
 []
 ```
+![Dashboard Eureka](documentation/gateway-dynamic-job.png)
 
-documentation/gateway-dynamic-job.png
 
 La même réponse en accès direct et à travers la Gateway confirme que la requête est correctement transmise au microservice Job.
 
@@ -414,8 +414,8 @@ La réponse obtenue est :
 ```json
 []
 ```
+![Dashboard Eureka](documentation/gateway-dynamic-categories.png)
 
-documentation/gateway-dynamic-categories.png
 
 La réponse `[]` signifie que la route fonctionne, mais qu'aucune catégorie n'est encore enregistrée.
 
@@ -428,8 +428,7 @@ Le microservice Meeting a été testé à travers l'API Gateway :
 ```text
 GET http://localhost:8090/api/meetings/hello
 ```
-
-documentation/gateway-dynamic-meeting.png
+![Dashboard Eureka](documentation/gateway-dynamic-meeting.png)
 
 ---
 
@@ -440,8 +439,7 @@ Le microservice Notification a été testé à travers l'API Gateway :
 ```text
 GET http://localhost:8090/api/notifications/hello
 ```
-
-documentation/gateway-dynamic-notification.png
+![Dashboard Eureka](documentation/gateway-dynamic-notification.png)
 
 Ces tests montrent que l'API Gateway centralise l'accès aux microservices Candidat, Job, Meeting et Notification.
 
